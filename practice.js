@@ -1,45 +1,12 @@
-const initialState = {
-  coins: 0,
-  health: 100,
-};
-
-const actionsArray = [
-  { type: "ADD_COINS", payload: 20 },
-  { type: "SUBTRACT_HEALTH", payload: 5 },
-];
-
-const accumulator1 = {};
-console.log({ ...accumulator1 });
-
-const marioReducer = (state, action) => {
-  console.log(action);
+const actions = [{ type: "upper_case" }, { type: "lower_case" }];
+const initialName = "Mary";
+const newName = actions.reduce((name, action) => {
   switch (action.type) {
-    case "ADD_COINS":
-      return {
-        ...state,
-        coins: state.coins + action.payload,
-      };
-    case "SUBTRACT_COINS":
-      return {
-        ...state,
-        coins: state.coins - action.payload,
-      };
-    case "ADD_HEALTH":
-      return {
-        ...state,
-        health: state.health + action.payload,
-      };
-    case "SUBTRACT_HEALTH":
-      return {
-        ...state,
-        health: state.health - action.payload,
-      };
+    case "upper_case":
+      return name.toUpperCase();
+    case "lower_case":
+      return name.toLowerCase();
     default:
-      return state;
+      return name;
   }
-};
-
-const currentState = actionsArray.reduce(marioReducer, initialState);
-console.log(currentState);
-
-const accumulator = {};
+}, initialName);
