@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from "../features/counter/counterSlice";
+// import counterReducer from "../features/counter/counterSlice";
 import { campsitesReducer } from "../features/campsites/campsitesSlice";
 import { commentsReducer } from "../features/comments/commentsSlice";
 import { partnersReducer } from "../features/partners/partnersSlice";
